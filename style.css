@@ -1,0 +1,93 @@
+*{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+}
+
+:root{
+      --color-bg:#222222;
+      --color-box-1:#ffffff;
+      --color-box-2:#ff1a3c;
+      --animation-speed:1.5s;
+      --row-col-size:5;
+      --grid-item-size:8vmin;
+}
+
+
+
+body{
+      background-color: var(--color-bg);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+}
+
+.art{
+      border: .2rem solid var(--color-box-2);
+      padding: 5vmin;
+      display: grid;
+      grid-template-columns: repeat(var(--row-col-size),var(--grid-item-size));
+      grid-template-rows: repeat(var(--row-col-size),var(--grid-item-size));
+      gap: 1vmin;
+}
+
+.item:nth-child(2n+1){
+      background-color: var(--color-box-1);
+      animation: ans-white var(--animation-speed) linear infinite;
+}
+
+.item:nth-child(2n){
+      background-color: var(--color-box-2);
+      animation: ans var(--animation-speed)  linear infinite;
+}
+
+
+
+@keyframes ans {
+
+      0%{
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      25%{
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      50%{
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 0);
+      }
+
+      75%{
+            clip-path: polygon(100% 0, 100% 0, 0 100%, 0 0);
+      }
+
+      100%{
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+      }
+      
+}
+
+
+@keyframes ans-white {
+
+      0%{
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      25%{
+            clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+      }
+
+      50%{
+            clip-path: polygon(0 0, 100% 100%, 0 100%, 0 100%);
+      }
+
+      75%{
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 100%);
+      }
+
+      100%{
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+      }
+      
+}
