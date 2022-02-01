@@ -1,1 +1,1 @@
-![geometric-art-animation](preview.PNG)
+![geometric-art-animation](snapshot.gif)
